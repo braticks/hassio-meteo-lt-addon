@@ -2,10 +2,7 @@ ARG BUILD_FROM
 FROM $BUILD_FROM
 
 # Install required packages
-RUN apk add --no-cache python3 py3-pip
-
-# Install Python requirements
-RUN pip3 install --no-cache-dir requests
+RUN apk add --no-cache python3 py3-requests
 
 # Copy data for add-on
 COPY run.sh /
