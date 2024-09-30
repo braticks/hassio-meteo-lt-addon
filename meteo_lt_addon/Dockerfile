@@ -4,12 +4,15 @@ FROM $BUILD_FROM
 # Install required packages
 RUN apk add --no-cache python3 py3-pip
 
+# Install Python requirements
+RUN pip3 install --no-cache-dir requests
+
 # Copy data for add-on
 COPY run.sh /
 COPY meteo_lt_api.py /
 
-# Install Python requirements
-RUN pip3 install requests
+# Make run.sh executable
+RUN chmod a+x /run.sh
 
 # Execute during startup
 CMD [ "/run.sh" ]
