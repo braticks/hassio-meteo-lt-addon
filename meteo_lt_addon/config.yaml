@@ -1,6 +1,6 @@
 name: "Meteo.lt Weather"
 description: "Integrate Lithuanian weather data from Meteo.lt API into Home Assistant"
-version: "0.1.0"
+version: "0.1.1"
 slug: "meteo_lt_weather"
 init: false
 arch:
