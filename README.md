@@ -1,0 +1,1 @@
+# hassio-meteo-lt-addon
