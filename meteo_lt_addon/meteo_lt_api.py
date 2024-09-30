@@ -2,6 +2,7 @@ import requests
 import json
 import time
 import sys
+import os
 
 def get_weather_data(location):
     url = f"https://api.meteo.lt/v1/places/{location}/forecasts/long-term"
@@ -28,7 +29,7 @@ def main(interval, location):
         data = get_weather_data(location)
         processed_data = process_weather_data(data)
         if processed_data:
-            with open('/share/meteo_lt_weather.json', 'w') as f:
+            with open('/data/meteo_lt_weather.json', 'w') as f:
                 json.dump(processed_data, f)
             print(f"Weather data updated: {processed_data}")
         else:
